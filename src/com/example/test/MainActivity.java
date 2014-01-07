@@ -2,6 +2,7 @@ package com.example.test;
 
 import java.io.File;
 
+
 import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Context;
@@ -35,7 +36,8 @@ public class MainActivity extends Activity {
 	private Bitmap tmp;
 	private PointF tmp_point = new PointF();
 	private Paint tmp_paint = new Paint();
-
+	Bitmap border = null,boder2=null;
+	Bitmap scaledBorder = null;
 
 	
     @Override
@@ -116,14 +118,28 @@ public class MainActivity extends Activity {
 			count = face_detector.findFaces(tmp, faces);
 			Toast.makeText(getApplicationContext(), "Face Count: " + String.valueOf(count), Toast.LENGTH_SHORT).show();
 			//setContentView(new Face_Detection_View(this));
-			imgView.setImageBitmap(tmp);
+			scaledBorder=BitmapFactory.decodeResource(getResources(), R.drawable.images);
+			boder2=overlay(tmp,scaledBorder);
+			imgView.setImageBitmap(boder2);
+			//Toast.makeText(getApplicationContext(), (int) (tmp_point.x + tmp_point.y), Toast.LENGTH_SHORT).show();
 			//imgView.setContentDescription(imgPath);
 		}
 	}
     
-    private void DrawFace()
-    {
-    	
+    private Bitmap overlay(Bitmap bmp1, Bitmap bmp2) {
+    	int a=0;
+        Bitmap bmOverlay = Bitmap.createBitmap(bmp1.getWidth(),bmp1.getHeight(), bmp1.getConfig());
+        Canvas canvas = new Canvas(bmOverlay);
+        canvas.drawBitmap(bmp1, 0, 0, null);
+        for(int i=0;i<count;i++)
+    	{
+    		FaceDetector.Face face = faces[i];
+    		face.getMidPoint(tmp_point);
+    		a = (int) face.eyesDistance();
+    		Bitmap resize = Bitmap.createScaledBitmap(bmp2,(int)(3*a), (int)(4*a), false);
+    		canvas.drawBitmap(resize ,(int)(tmp_point.x -2*a) ,(int)(tmp_point.y -2.5 *a), null);
+    	}
+        return bmOverlay;
     }
     /*
     // draw a circle on face 
