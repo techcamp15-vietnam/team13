@@ -20,7 +20,7 @@
     <Button
         android:id="@+id/button2"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBaseline="@+id/abutton"
         android:layout_alignParentBottom="true"
          android:layout_alignParentRight="true"
@@ -32,7 +32,7 @@
     <Button
         android:id="@+id/abutton"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignLeft="@+id/imageView1"
         android:layout_alignParentBottom="true"
@@ -42,7 +42,7 @@
     <Button
         android:id="@+id/button3"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentLeft="true"
         android:layout_alignBottom="@+id/abutton"
         android:layout_alignParentBottom="true"
@@ -54,7 +54,7 @@
     <Spinner
         android:id="@+id/edit"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBottom="@+id/button2"
          android:layout_alignParentBottom="true"
         android:layout_alignLeft="@+id/button2"
@@ -65,7 +65,7 @@
     <Spinner
         android:id="@+id/gif"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignParentRight="true"
         android:layout_alignBottom="@+id/button2"
          android:layout_alignParentBottom="true"
@@ -76,7 +76,7 @@
     <Button
         android:id="@+id/button4"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBottom="@+id/abutton"
          android:layout_alignParentBottom="true"
          android:layout_alignLeft="@+id/abutton"
@@ -88,7 +88,7 @@
     <Button
         android:id="@+id/button1"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignBaseline="@+id/button2"
         android:layout_alignBottom="@+id/button2"
          android:layout_alignParentBottom="true"
@@ -102,7 +102,7 @@
     <Button
         android:id="@+id/button5"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         android:layout_alignLeft="@+id/imageView1"
          android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/abutton"
