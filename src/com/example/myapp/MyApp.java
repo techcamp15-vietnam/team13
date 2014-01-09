@@ -108,6 +108,9 @@ public class MyApp extends Activity implements OnClickListener{
 		editSpinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 
 			@Override
+			/*select face
+			 * @author 13B Khong Minh tri*/
+
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				if("        Face1".equals(arr1[arg2])){
@@ -145,6 +148,8 @@ public class MyApp extends Activity implements OnClickListener{
 		});
 		gifSpinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 			@Override
+			/*select image
+			 * @author 13A Dao Hong Thuan*/
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				// TODO Auto-generated method stub
@@ -205,6 +210,8 @@ public class MyApp extends Activity implements OnClickListener{
 		});
 		onCam();
 	}
+	/* turn on camera
+	 * @author 13C Nguyen Tien Thanh*/
 	 private void onCam()
 	    {
 	    	tmp= null;
@@ -213,6 +220,8 @@ public class MyApp extends Activity implements OnClickListener{
 	    	intent.putExtra(MediaStore.EXTRA_OUTPUT, MyApp.getPhoto());
 	    	startActivityForResult(intent, 0);
 	    }
+	 /* save image
+	* * @author 13C Nguyen Tien Thanh*/
 	 private static Uri  getPhoto()
 	    {
 	    	File root = Environment.getExternalStorageDirectory();
@@ -231,6 +240,8 @@ public class MyApp extends Activity implements OnClickListener{
 	    	}
 	    }
 	 @Override
+	 /*show image
+	  * @author 13C Nguyen Tien Thanh*/
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			super.onActivityResult(requestCode, resultCode, data);
 			if(resultCode != RESULT_OK)
@@ -246,6 +257,9 @@ public class MyApp extends Activity implements OnClickListener{
 			
 			img1.setImageBitmap(tmp);
 		}
+	 /*rotate image
+	  * @author 13A Dao Hong Thuan
+	  * @param String filename: directory of file*/
 		public Bitmap rotateBitmap (String fileName) {
 			Bitmap bitmap = null;
 			Bitmap rotatedBitmap = null;
@@ -315,6 +329,8 @@ public class MyApp extends Activity implements OnClickListener{
 
 			return rotatedBitmap;
 		}
+	/*detect faces
+	* @author 13C Nguyen Tien Thanh*/
 	 private void edit()
 	    {
 	    	FaceDetector.Face[] faces;
@@ -328,6 +344,9 @@ public class MyApp extends Activity implements OnClickListener{
 				img1.setImageBitmap(boder2);
 			}
 	    }
+	 /*insert troll faces into image
+	 * @author 13C Nguyen Tien Thanh
+	 * @author 13A Dao Hong Thuan*/
 	 private Bitmap overlay(Bitmap bmp1,FaceDetector.Face[] faces) {
 	    	int a=0;
 	    	Bitmap[] scaledBorder = new Bitmap[10];
@@ -356,6 +375,8 @@ public class MyApp extends Activity implements OnClickListener{
 	    	}
 	        return bmOverlay;
 	    }
+	 /*save image after edit
+	 * @author 13A Dao Hong Thuan*/
 	 private boolean storeImage(Bitmap imageData, String filename) {
 			//get path to external storage (SD card)
 			String iconsStoragePath = Environment.getExternalStorageDirectory() + "/myAppDir/myimages1";
@@ -391,6 +412,9 @@ public class MyApp extends Activity implements OnClickListener{
               animation.start();
           }
       }
+	 /* start animation
+	 * @author 13C Nguyen Tien Thanh 
+	 * @author 13A Dao Hong Thuan*/
 	    private void startAnimation1(Bitmap boder2,Bitmap b1,Bitmap b2,Bitmap b3,Bitmap b4){
 	    	   Bitmap i1,i2,i3;
 	    	   if(boder2 == null){
@@ -412,6 +436,8 @@ public class MyApp extends Activity implements OnClickListener{
 	           imageView.setImageDrawable(animation);
 	           imageView.post(new Starter());
 	       }
+	    /*make frames of animation
+	    * @author 13A Dao Hong Thuan */
 	    private Bitmap overlay1(Bitmap bmp1,Bitmap bmp2) {
 	    	Bitmap resizeBase;
 	    	Bitmap resize;
@@ -434,6 +460,7 @@ public class MyApp extends Activity implements OnClickListener{
 	       }
 	    /*save gif file
 	     * @param byte[] a: byte array is saved
+	     * * @author 13c Nguyen Tien Thanh
 	     * */
 	    private void save_gif(byte[] array)
 	    {
@@ -459,7 +486,7 @@ public class MyApp extends Activity implements OnClickListener{
 	    }
 	    /*make a gif flie
 	     * @param Bitmap b1,Bitmap b2,Bitmap b3,Bitmap b4: 4 frames of gif file
-	     * */
+	     * @author 13C Nguyen tien Thanh*/
 	    private byte[] Make_gif(Bitmap b1,Bitmap b2,Bitmap b3,Bitmap b4,Bitmap b5,Bitmap b6)
 	    {
 	    	ByteArrayOutputStream bos = new ByteArrayOutputStream();
@@ -475,7 +502,9 @@ public class MyApp extends Activity implements OnClickListener{
 	    	encoder.finish();
 	    	return bos.toByteArray();
 	    }
-	    
+	 /*find view by id
+	 * @author Khong Minh Tri
+	 * @author Dao Hong Thuan*/
 	 public void init(){
 		    img1=(ImageView)findViewById(R.id.imageView1);
 		    img2=(ImageView)findViewById(R.id.imageView2);
@@ -493,12 +522,18 @@ public class MyApp extends Activity implements OnClickListener{
 			controlButton.setOnClickListener(this);
 	  }
 	@Override
+	/* create option menu
+	* @author 13B Khong Minh Tri
+	* @author 13A Dao Hong Thuan*/
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		MenuInflater inflater = getMenuInflater();
 		inflater.inflate(R.menu.my_app, menu);
 		return true;
 	}
+	/*get Key Back
+	* @author 13B Khong Minh Tri
+	* @author 13A Dao Hong Thuan*/
 	public boolean onKeyDown(int keyCode,KeyEvent event){
 		if((keyCode==KeyEvent.KEYCODE_BACK)){
 			switch (x) {
@@ -521,6 +556,8 @@ public class MyApp extends Activity implements OnClickListener{
 		return false;
 	}  
 	@Override
+	/*create option item selected
+	* @author 13B Khong Minh Tri*/
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Bitmap tmp2;
 	switch (item.getItemId()) {
@@ -544,6 +581,8 @@ public class MyApp extends Activity implements OnClickListener{
 	}
 
 	@Override
+	/*set onClick
+	* @author 13A Dao Hong Thuan*/
 	public void onClick(View v) {
 		// TODO Auto-generated method stub
 		switch(v.getId()){
