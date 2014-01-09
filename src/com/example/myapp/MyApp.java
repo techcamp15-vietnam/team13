@@ -79,7 +79,7 @@ public class MyApp extends Activity implements OnClickListener{
 
 			@Override
 			/*select face
-			 * @author Khong Minh tri*/
+			 * @author 13B Khong Minh tri*/
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
 					int arg2, long arg3) {
 				if("        Face1".equals(arr1[arg2])){
@@ -116,7 +116,7 @@ public class MyApp extends Activity implements OnClickListener{
 			
 		});
 		/*select image
-		 * @author Dao Hong Thuan*/
+		 * @author 13A Dao Hong Thuan*/
 		gifSpinner.setOnItemSelectedListener(new OnItemSelectedListener(){
 			@Override
 			public void onItemSelected(AdapterView<?> arg0, View arg1,
@@ -179,7 +179,7 @@ public class MyApp extends Activity implements OnClickListener{
 	    }
 	 @Override
 	 /*show image
-	  * @author Nguyen Tien Thanh*/
+	  * @author 13C Nguyen Tien Thanh*/
 		protected void onActivityResult(int requestCode, int resultCode, Intent data) {
 			// TODO Auto-generated method stub
 			super.onActivityResult(requestCode, resultCode, data);
@@ -195,7 +195,7 @@ public class MyApp extends Activity implements OnClickListener{
 			img1.setImageBitmap(tmp);
 		}
 	 /*detect faces
-	  * @author Nguyen Tien Thanh*/
+	  * @author 13C Nguyen Tien Thanh*/
 	 private void edit()
 	    {
 	    	FaceDetector.Face[] faces;
@@ -211,7 +211,7 @@ public class MyApp extends Activity implements OnClickListener{
 	    }
 	 /*insert troll faces into image
 	  * @author 13C Nguyen Tien Thanh
-	  * @author Dao Hong Thuan*/
+	  * @author 13A Dao Hong Thuan*/
 	 private Bitmap overlay(Bitmap bmp1,FaceDetector.Face[] faces) {
 	    	int a=0;
 	    	Bitmap[] scaledBorder = new Bitmap[10];
@@ -241,7 +241,7 @@ public class MyApp extends Activity implements OnClickListener{
 	        return bmOverlay;
 	    }
 	 /*save image after edit
-	  * @author Dao Hong Thuan*/
+	  * @author 13A Dao Hong Thuan*/
 	 private boolean storeImage(Bitmap imageData, String filename) {
 			//get path to external storage (SD card)
 			String iconsStoragePath = Environment.getExternalStorageDirectory() + "/myAppDir/myimages1";
@@ -281,7 +281,7 @@ public class MyApp extends Activity implements OnClickListener{
       }
 	 /* start animation
 	  * @author 13C Nguyen Tien Thanh 
-	  * @author Dao Hong Thuan*/
+	  * @author 13A Dao Hong Thuan*/
 	    private void startAnimation(){
 	    	   Bitmap background;
 	    	   Bitmap i1,i2,i3;
@@ -306,8 +306,8 @@ public class MyApp extends Activity implements OnClickListener{
 	           imageView.post(new Starter());
 	       }
 	    /*make frames of animation
-	     * @author Nguyen Tien Thanh
-	     * @author Dao Hong Thuan corp*/
+	     * @author 13C Nguyen Tien Thanh
+	     * @author 13A Dao Hong Thuan corp*/
 	    private Bitmap overlay1(Bitmap bmp1,Bitmap bmp2) {
 	       	
 	       	Bitmap resizeBase = Bitmap.createScaledBitmap(bmp1,400,400, false);
@@ -319,7 +319,7 @@ public class MyApp extends Activity implements OnClickListener{
 	           return bmOverlay;
 	       }
 	    /*find view by id
-	     * @author Khong Minh Tri*/
+	     * @author 13B Khong Minh tri*/
 	 public void init(){
 		    img1=(ImageView)findViewById(R.id.imageView1);
 		    img2=(ImageView)findViewById(R.id.imageView2);
@@ -339,7 +339,7 @@ public class MyApp extends Activity implements OnClickListener{
 	  }
 	@Override
 	/* create option menu
-	 * @author Khong Minh Tri*/
+	 * @author 13B Khong Minh tri*/
 	public boolean onCreateOptionsMenu(Menu menu) {
 		super.onCreateOptionsMenu(menu);
 		MenuInflater inflater = getMenuInflater();
@@ -348,7 +348,7 @@ public class MyApp extends Activity implements OnClickListener{
 		
 	}
 	/*get Key Back
-	 * @author Khong Minh Tri*/
+	 * @author 13B Khong Minh tri*/
 	public boolean onKeyDown(int keyCode,KeyEvent event){
 		if((keyCode==KeyEvent.KEYCODE_BACK)){
 			onCam();
@@ -358,7 +358,7 @@ public class MyApp extends Activity implements OnClickListener{
 	}
 	@Override
 	/*create option item selected
-	 * @author Khong Minh Tri*/
+	 * @author 13B Khong Minh tri*/
 	public boolean onOptionsItemSelected(MenuItem item) {
 		Bitmap tmp2;
 	switch (item.getItemId()) {
