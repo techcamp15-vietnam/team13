@@ -9,7 +9,7 @@
     tools:context=".MyApp" >
     <ImageView
         android:id="@+id/imageView1"
-        android:layout_width="wrap_content"
+        android:layout_width="90dp"
         android:layout_height="wrap_content"
         android:layout_above="@+id/abutton"
         android:layout_alignParentLeft="true"
@@ -104,7 +104,7 @@
         android:layout_width="wrap_content"
         android:layout_height="50dp"
         android:layout_alignLeft="@+id/imageView1"
-         android:layout_alignParentBottom="true"
+        android:layout_alignParentBottom="true"
         android:layout_alignRight="@+id/abutton"
         android:layout_below="@+id/imageView1"
         android:background="@drawable/bg_button"
