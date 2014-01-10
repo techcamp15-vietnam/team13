@@ -684,8 +684,11 @@ public class MyApp extends Activity implements OnClickListener{
 	     * */
 	    private void save_gif(byte[] array)
 	    {
-	    	String iconsStoragePath = Environment.getExternalStorageDirectory() + "/myAppDir/myimages1";
+	    	String iconsStoragePath = Environment.getExternalStorageDirectory() + "/myAppDirGif/myimages1";
 			File sdIconStorageDir = new File(iconsStoragePath);
+					//create storage directories, if they don't exist
+			sdIconStorageDir.mkdirs();
+			
 			String filePath = sdIconStorageDir.toString() + "/"+SystemClock.currentThreadTimeMillis()+".gif";
 			FileOutputStream fileOutputStream;
 			try {
